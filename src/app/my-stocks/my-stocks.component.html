@@ -1,0 +1,61 @@
+<div class="stock-page">
+    <div class="header-block">
+          <h2>  {{ 'Welcome !' }} </h2>  
+    </div> 
+
+    <div class="selection-block">
+            <div class="date-selection">
+                <mat-form-field>
+                    <input [(ngModel)]="dateVal"  (ngModelChange)="triggerApi()" matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </div>
+            <div class="stock-selection">
+                <mat-form-field>
+                    <mat-select placeholder="Select a Stock" [(ngModel)]="stockVal" (ngModelChange)="triggerApi()">
+                      <mat-option value="IBM">IBM</mat-option>
+                      <mat-option value="2">Option 2</mat-option>
+                      <mat-option value="3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+    </div>
+    <div class="content-block" *ngIf="content.open && content.open.length > 0">
+        <mat-table #table [dataSource]="stockSource">
+            <!-- Stock Name Column -->            
+            <ng-container matColumnDef="name">
+                <mat-header-cell class="text-center" *matHeaderCellDef> Stock Name </mat-header-cell>
+                <mat-cell class="text-center" *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+  
+            <!-- Open Column -->            
+            <ng-container matColumnDef="open">
+              <mat-header-cell class="text-center" *matHeaderCellDef> At Open </mat-header-cell>
+              <mat-cell class="text-center" *matCellDef="let element"> {{element.open}} </mat-cell>
+            </ng-container>
+
+            <!-- Close Column -->
+            <ng-container matColumnDef="close">
+              <mat-header-cell *matHeaderCellDef class="text-center"> At Close </mat-header-cell>
+              <mat-cell *matCellDef="let element" class="text-center"> {{element.close}} </mat-cell>
+            </ng-container>
+        
+            <!-- Highest Column -->
+            <ng-container matColumnDef="high">
+              <mat-header-cell *matHeaderCellDef class="text-center" > Highest </mat-header-cell>
+              <mat-cell class="green-bgcolor text-center" *matCellDef="let element"> {{element.high}} </mat-cell>
+            </ng-container>
+        
+            <!-- Lowest Column -->
+            <ng-container matColumnDef="low">
+              <mat-header-cell *matHeaderCellDef class="text-center"> Lowest </mat-header-cell>
+              <mat-cell class="red-bgcolor text-center" *matCellDef="let element"> {{element.low}} </mat-cell>
+            </ng-container>
+        
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+    </div>
+
+</div>
