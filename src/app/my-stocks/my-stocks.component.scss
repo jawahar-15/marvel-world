@@ -18,7 +18,16 @@
 .red-bgcolor{
     background-color: #ffadad;
 }
+.content-block{
+    width: 80%;
+    margin-left: 12%;
+    margin-top: 5%;
+}
 
-mat-header-cell{
-    text-align: center !important;
+mat-header-cell, mat-cell {
+    justify-content: center;
+    // flex: 0 0 200px;
+    // border-bottom-width: 1px;
+    // border-bottom-style: solid;
+    // border-bottom-color: lightgrey;
 }

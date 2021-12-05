@@ -1,0 +1,43 @@
+#sect1 {  
+    height: 650 px;  
+    color: #fff;
+    background-image: url("../../assets/img/background.jpg");  
+    background-size: 100%;
+    background-size: cover;  
+}
+.example-card {
+    max-width: 400px;
+}
+  
+.example-header-image {
+    background-image: url('../../assets/img/marvel.png');
+    background-size: cover;
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    // margin-bottom: 9.5%;
+}
+.list-block{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+.list-sec{
+    margin-right: 5%;
+}
+
+.character-block{
+    color: red;
+    font-weight: 600;
+    margin-top: 2%;
+    font-size: 20px;
+}
+.center-align{
+    justify-content: center;
+     display: flex;
+}
+.mat-badge-medium.mat-badge-above .mat-badge-content {
+    top: -70px;
+    right: -30px;
+}

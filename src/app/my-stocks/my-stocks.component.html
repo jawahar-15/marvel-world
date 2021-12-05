@@ -4,13 +4,13 @@
     </div> 
 
     <div class="selection-block">
-            <div class="date-selection">
+            <!-- <div class="date-selection">
                 <mat-form-field>
                     <input [(ngModel)]="dateVal"  (ngModelChange)="triggerApi()" matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field>
-            </div>
+            </div> -->
             <div class="stock-selection">
                 <mat-form-field>
                     <mat-select placeholder="Select a Stock" [(ngModel)]="stockVal" (ngModelChange)="triggerApi()">
@@ -22,7 +22,7 @@
             </div>
     </div>
     <div class="content-block" *ngIf="content.open && content.open.length > 0">
-        <mat-table #table [dataSource]="stockSource">
+        <mat-table #table [dataSource]="stockSource" class="mat-elevation-z8">
             <!-- Stock Name Column -->            
             <ng-container matColumnDef="name">
                 <mat-header-cell class="text-center" *matHeaderCellDef> Stock Name </mat-header-cell>

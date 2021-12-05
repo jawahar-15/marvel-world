@@ -1,0 +1,43 @@
+<div class="outer-block" id="sect1">
+
+    <div class="card-container">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title> {{ character.name }} </mat-card-title>
+              <mat-card-subtitle>  © 2021 MARVEL </mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="character.imagePath" [alt]="getAlternateName()">
+            <mat-card-content>
+              <p>
+                    {{ character.desc }}
+              </p>
+            </mat-card-content>
+          </mat-card>
+    </div>
+
+    <span class="center-align"> <p class="character-block">  View More about  {{ character.name }}</p></span>
+    <div class="list-block">
+        <div class="list-sec">
+            <span [matBadge]="character.comics.available" matBadgeColor="warn" matBadgePosition="above after">
+                <img mat-card-image  height="50px" width= "50px" src="https://fontmeme.com/permalink/211204/e66bee8dbeaf70201eb4647b842842e6.png">
+            </span>
+        </div>
+        <div class="list-sec">
+            <span [matBadge]="character.series.available" matBadgeColor="warn" matBadgePosition="above after">
+                <img mat-card-image  height="50px" width= "50px" src="https://fontmeme.com/permalink/211204/70e4bc34ce01c581e475a4c277e2f2ff.png">
+            </span>
+        </div>
+        <div class="list-sec">
+            <span [matBadge]="character.stories.available" matBadgeColor="warn" matBadgePosition="above after">
+                <img mat-card-image  height="50px" width= "50px" src="https://fontmeme.com/permalink/211204/8b5b04a1c735c346cbce69fc023e1184.png">
+            </span>
+        </div>
+        <div class="list-sec">
+            <span [matBadge]="character.events.available" matBadgeColor="warn" matBadgePosition="above after">
+                <img mat-card-image  height="50px" width= "50px" src="https://fontmeme.com/permalink/211204/f3cd26d79ebb6c08ea72ae20a1591bde.png">
+            </span>
+        </div>
+    </div>
+    <p></p>
+</div>

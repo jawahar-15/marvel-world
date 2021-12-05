@@ -11,7 +11,7 @@ import { getDefaultStockModel, StockModel } from '../StockModel';
 export class MyStocksComponent implements OnInit {
   minDate = new Date(2000, 0, 1);
   maxDate = new Date();
-  dateVal = "";
+  // dateVal = "";
   stockVal = "";
   firstObj= 'Time Series (5min)';
   content: StockModel  = getDefaultStockModel();
@@ -24,7 +24,7 @@ export class MyStocksComponent implements OnInit {
   }
   
   triggerApi(){
-    if(this.stockVal && this.dateVal) {
+    if(this.stockVal) {
       this.stockapi.getValue(this.stockVal).subscribe((val: any) => {
         let stockList = [];
         this.content.name = this.stockVal;
