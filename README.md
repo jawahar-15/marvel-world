@@ -27,3 +27,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 "# my-stock" 
 "# marvel-world" 
+
+
+Application Link:
+
+--> https://marvel-world-9b275.web.app/marvel
+
+![image](https://user-images.githubusercontent.com/69661545/144748493-e30d6003-4e79-4944-9c90-84db85d6bde5.png)
